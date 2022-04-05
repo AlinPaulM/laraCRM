@@ -3,8 +3,10 @@
 -install laravel using composer, run "composer create-project laravel/laravel my-app"
 -the .env config file can't be commited, we can't store credentials in our code(for obvious security reasons). But for the purpose of this app, i'll store all configuration in .env.example, so that when i run the "cp .env.example .env" step from the installation INSTRUCTIONS(from Readme.md), it'll copy all configuration to .env
 -there's no fancy laravel command to create a database - so use phpmyadmin or whatever you want to create a database with the configuration found in .env.example (i had to go to https://wampserver.aviatechno.net/?lang=en and update my phpmyadmin for this)
-
-
+-create the migration files that create the tables, run:
+    -php artisan make:migration create_companies_table
+    -php artisan make:migration create_employees_table
+    (then modify these files to the table structure you want, obviously)
 
 
 
