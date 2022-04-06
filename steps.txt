@@ -10,7 +10,11 @@
 -install Laravel Breeze(https://laravel.com/docs/9.x/starter-kits#laravel-breeze): 
     -composer require laravel/breeze --dev
     -php artisan breeze:install
-
+    (-then i had to update my system for the next steps(cuz i ran the next commands first and i realized i had to do this, my nodejs was outdated, etc):
+        -i updated my node.js(downloaded and ran the windows installer from https://nodejs.org/en/)
+        -i googled "how to install npm", went here https://docs.npmjs.com/downloading-and-installing-node-js-and-npm and installed the latest version of npm running "npm install -g npm" in cmd
+    )
+    
 
 
 
