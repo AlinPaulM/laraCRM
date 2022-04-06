@@ -14,6 +14,8 @@
         -i updated my node.js(downloaded and ran the windows installer from https://nodejs.org/en/)
         -i googled "how to install npm", went here https://docs.npmjs.com/downloading-and-installing-node-js-and-npm and installed the latest version of npm running "npm install -g npm" in cmd
     )
+    -npm install
+    -npm run dev
     
 
 
