@@ -10,3 +10,5 @@ SETUP INSTRUCTIONS(for local env): open your git bash(or whatever terminal you'r
 -php artisan cache:clear  
 -composer dump-autoload  
 -php artisan serve  
+
+Then login with email "admin@admin.com" and password "password"  
