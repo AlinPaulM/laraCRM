@@ -16,6 +16,9 @@ FULL APPLICATION CREATION STEPS
 -populate database by running the migrations and the seeds: php artisan migrate --seed 
 
 -install Laravel Breeze(https://laravel.com/docs/9.x/starter-kits#laravel-breeze . git commit after each step, to see exactly what it did): 
+    (
+        -i used Laravel Breeze since "Laravel make:auth" is was for Laravel 5, this app is done with Laravel 9
+    )
     -composer require laravel/breeze --dev
     -php artisan breeze:install
     (
