@@ -8,7 +8,6 @@ use App\Http\Requests\UpdateCompanyRequest;
 
 class CompanyController extends Controller
 {
-
     /**
      * The table associated with the model.
      *

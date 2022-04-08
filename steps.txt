@@ -26,12 +26,24 @@ FULL APPLICATION CREATION STEPS
     -npm install (https://www.stackchief.com/tutorials/npm%20install%20%7C%20how%20it%20works)
     -npm run dev (https://laracasts.com/discuss/channels/javascript/what-is-the-difference-between-npm-run-dev-and-npm-run-production)
 
--create the model, controller with model type-hints resource, and form requests files for validation, for both employees and companies, by running:
+-create the model, controller with model resource type-hints, and form requests files for validation:
     -php artisan make:model Employee --controller --resource --requests
     -php artisan make:model Company --controller --resource --requests
+    (
+        p.s. the same could be accomplished by running the following:
+            -php artisan make:model Employee
+            -php artisan make:controller EmployeeController --model=Employee --resource --requests
+            (and same for Company)
+    )
 -set the table name for the Company model, as laravel would automatically use Companys and that's not correct(https://laravel.com/docs/9.x/eloquent#table-names)
 
-
+-add the resource routes for EmployeeController and CompanyController by adding the following 2 lines to routes\web.php:
+    -"Route::resource('employees', EmployeeController::class);"
+    -"Route::resource('companies', CompanyController::class);"
+    (
+        https://laravel.com/docs/9.x/controllers#resource-controllers
+        see the added routes: https://laravel.com/docs/9.x/controllers#actions-handled-by-resource-controller (or "php artisan route:list")
+    )
 
 
 
