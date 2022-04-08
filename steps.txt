@@ -26,8 +26,10 @@ FULL APPLICATION CREATION STEPS
     -npm install (https://www.stackchief.com/tutorials/npm%20install%20%7C%20how%20it%20works)
     -npm run dev (https://laracasts.com/discuss/channels/javascript/what-is-the-difference-between-npm-run-dev-and-npm-run-production)
 
-
-
+-create the model, controller with model type-hints resource, and form requests files for validation, for both employees and companies, by running:
+    -php artisan make:model Employee --controller --resource --requests
+    -php artisan make:model Company --controller --resource --requests
+-set the table name for the Company model, as laravel would automatically use Companys and that's not correct(https://laravel.com/docs/9.x/eloquent#table-names)
 
 
 
