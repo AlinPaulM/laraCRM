@@ -51,7 +51,9 @@ FULL APPLICATION CREATION STEPS
 -generate database factories for employees and companies(so i have some data to play with), run:
     -php artisan make:factory CompanyFactory
     -php artisan make:factory EmployeeFactory
-
+-write the factories code(since the commands above create empty factories, obviously)
+-define one-to-many and many-to-one relationships between the Employee and Company models, necessary for database seeding using EmployeeFactory and CompanyFactory, for queries, etc"
+-add the seeding of companies and employees to database\seeders\DatabaseSeeder.php, using the newly created factories
 
 
 
