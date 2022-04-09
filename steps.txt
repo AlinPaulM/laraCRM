@@ -48,6 +48,9 @@ FULL APPLICATION CREATION STEPS
         see the added routes: https://laravel.com/docs/9.x/controllers#actions-handled-by-resource-controller (or "php artisan route:list")
     )
 
+-generate database factories for employees and companies(so i have some data to play with), run:
+    -php artisan make:factory CompanyFactory
+    -php artisan make:factory EmployeeFactory
 
 
 

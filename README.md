@@ -1,19 +1,20 @@
 LaraCRM
 --------
 
-SETUP INSTRUCTIONS(for local env): open your git bash(or whatever terminal you're using), navigate to the project folder and run:  
--database
-    -(create database:) use phpmyadmin or whatever you want to create a database with the configuration found in .env.example(i.e. see the DB_* files)  (e.g. on a standard WAMP, all configuration is as in .env.example, so you just create a "laracrm" database in phpmyadmin)  
-    -(populate database by running the migrations and the seeds:) php artisan migrate --seed  
--composer install  
--cp .env.example .env  
--php artisan cache:clear  
--composer dump-autoload  
--php artisan serve  
+SETUP INSTRUCTIONS(for local env):  
+-use phpmyadmin/etc to create a database with the configuration found in .env.example(i.e. see the DB_* rows)  (e.g. on a standard WAMP, all configuration is as in .env.example, so just create a "laracrm" database in phpmyadmin)  
+-open your terminal(git bash/etc), navigate to the project folder and run:  
+    -php artisan migrate --seed  
+    -composer install  
+    -cp .env.example .env  
+    -php artisan cache:clear  
+    -composer dump-autoload  
+    -php artisan serve  
+-start your MySQL(e.g. start WAMP)  
 
 Then login with email "admin@admin.com" and password "password"  
---------------------------------------------------------------------
-Complete a small test in Laravel – to develop a basic mini CRM to manage companies and their employees  
+*********************************************************************************  
+Complete a small test in Laravel - to develop a basic mini CRM to manage companies and their employees  
 - Use https://adminlte.io/ as a framework for the application(or any framework you want)  
 - Basic Laravel Auth: ability to log in as administrator  
 - Use database seeds to create first user with email admin@admin.com and password “password”  
