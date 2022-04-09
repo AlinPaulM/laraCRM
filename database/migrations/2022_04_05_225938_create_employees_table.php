@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('first_name', 100);
             $table->string('last_name', 100);
             $table->string('email')->unique()->nullable();
-            $table->string('phone', 15)->unique()->nullable();
+            $table->string('phone', 20)->unique()->nullable();
             $table->timestamps();
 
             $table->foreignId('company_id')->constrained('companies');
