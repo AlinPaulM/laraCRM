@@ -9,13 +9,6 @@ use App\Http\Requests\UpdateCompanyRequest;
 class CompanyController extends Controller
 {
     /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = "companies";
-
-    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

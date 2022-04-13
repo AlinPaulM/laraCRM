@@ -9,6 +9,13 @@ class Company extends Model
 {
     use HasFactory;
 
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = "companies";
+
     // define the one-to-many relationship
     public function employees()
     {
