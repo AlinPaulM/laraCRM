@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('phone', 20)->unique()->nullable();
             $table->timestamps();
 
-            $table->foreignId('company_id')->constrained('companies');
+            $table->foreignId('company_id')->nullable()->constrained('companies')->onDelete('set null');
         });
     }
 
