@@ -38,7 +38,10 @@ FULL APPLICATION CREATION STEPS
             -php artisan make:controller EmployeeController --model=Employee --resource --requests
             (and same for Company)
     )
--set the table name for the Company model, as laravel would automatically use Companys and that's not correct(https://laravel.com/docs/9.x/eloquent#table-names)
+[
+    -set the table name for the Company model, as laravel would automatically use Companys and that's not correct(https://laravel.com/docs/9.x/eloquent#table-names)
+        -comeback: not required. Laravel has this covered by default.
+]
 
 -add the resource routes for EmployeeController and CompanyController by adding the following 2 lines to routes\web.php:
     -"Route::resource('employees', EmployeeController::class);"
@@ -52,11 +55,11 @@ FULL APPLICATION CREATION STEPS
     -php artisan make:factory CompanyFactory
     -php artisan make:factory EmployeeFactory
 -write the factories code(since the commands above create empty factories, obviously)
--define one-to-many and many-to-one relationships between the Employee and Company models, necessary for database seeding using EmployeeFactory and CompanyFactory, for queries, etc"
+-define one-to-many and many-to-one relationships between the Employee and Company models, necessary for database seeding using EmployeeFactory and CompanyFactory, for queries, etc
 -add the seeding of companies and employees to database\seeders\DatabaseSeeder.php, using the newly created factories
 
-
-
+-created homepage(view file, added the route to it, added some custom css)
+-disabled registration(commented the GET and POST 'register' routes in routes\auth.php)
 
 
 
