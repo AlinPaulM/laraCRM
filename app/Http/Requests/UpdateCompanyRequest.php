@@ -13,7 +13,7 @@ class UpdateCompanyRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class UpdateCompanyRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:100',
+            'email' => 'email|unique:companies|nullable',
+            'website' => 'url|unique:companies|nullable',
+            'logo' => 'file|image|dimensions:min_width=100,min_height=100'
         ];
     }
 }
