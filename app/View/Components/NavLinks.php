@@ -11,9 +11,9 @@ class NavLinks extends Component
      * An associative array, where key is the route name and value is the route itself
      */
     public array $routes = [
-        'Dashboard' => 'dashboard',
-        'Companies' => 'companies.index',
-        'Employees' => 'employees.index',
+        'dashboard' => 'dashboard',
+        'companies' => 'companies.index',
+        'employees' => 'employees.index',
     ];
 
     // Whether the links are normal links or responsive links(for mobile view)
