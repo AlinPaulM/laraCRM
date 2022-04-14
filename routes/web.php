@@ -25,5 +25,5 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('employees', EmployeeController::class);
-Route::resource('companies', CompanyController::class);
+Route::resource('employees', EmployeeController::class)->middleware(['auth']);
+Route::resource('companies', CompanyController::class)->middleware(['auth']);
