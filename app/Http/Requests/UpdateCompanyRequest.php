@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateCompanyRequest extends FormRequest
 {
@@ -23,10 +24,14 @@ class UpdateCompanyRequest extends FormRequest
      */
     public function rules()
     {
+        // see https://laravel.com/docs/9.x/validation#rule-unique Forcing A Unique Rule To Ignore A Given ID:
+        
+        $id = $this->route('company')->id;
+
         return [
             'name' => 'required|max:100',
-            'email' => 'email|unique:companies|nullable',
-            'website' => 'url|unique:companies|nullable',
+            'email' => ['email', 'nullable', Rule::unique('companies')->ignore($id)],
+            'website' => ['url', 'nullable', Rule::unique('companies')->ignore($id)],
             'logo' => 'file|image|dimensions:min_width=100,min_height=100'
         ];
     }

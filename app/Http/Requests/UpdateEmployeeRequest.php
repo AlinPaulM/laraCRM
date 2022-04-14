@@ -23,11 +23,13 @@ class UpdateEmployeeRequest extends FormRequest
      */
     public function rules()
     {
+        $id = $this->route('employee')->id;
+
         return [
             'first_name' => 'required|max:100',
             'last_name' => 'required|max:100',
-            'email' => 'email|unique:employees|nullable',
-            'phone' => 'string|unique:employees|max:20|nullable'
+            'email' => ['email', 'nullable', Rule::unique('employees')->ignore($id)],
+            'phone' => ['string', 'max:20', 'nullable', Rule::unique('employees')->ignore($id)]
         ];
     }
 }
