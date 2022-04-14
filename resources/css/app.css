@@ -2,6 +2,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+main a {
+    color: darkslateblue;
+}
+
 .homeLogoText {
     font-size: 40px;
     line-height: 80px;

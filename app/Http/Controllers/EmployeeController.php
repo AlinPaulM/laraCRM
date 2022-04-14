@@ -15,7 +15,9 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        return view('employees.index', [
+            'employees' => Employee::paginate(10)
+        ]);
     }
 
     /**
@@ -25,7 +27,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('employees.create');
     }
 
     /**
@@ -36,7 +38,18 @@ class EmployeeController extends Controller
      */
     public function store(StoreEmployeeRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $employee = new Employee;
+
+        $employee->first_name = $validated['first_name'];
+        $employee->last_name = $validated['last_name'];
+        $employee->email = $validated['email'];
+        $employee->phone = $validated['phone'];
+
+        $employee->save();
+
+        return redirect()->route('employees.index');
     }
 
     /**
@@ -47,7 +60,9 @@ class EmployeeController extends Controller
      */
     public function show(Employee $employee)
     {
-        //
+        return view('employees.show', [
+            'employee' => $employee
+        ]);
     }
 
     /**
@@ -58,7 +73,9 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
-        //
+        return view('employees.edit', [
+            'employee' => $employee
+        ]);
     }
 
     /**
@@ -70,7 +87,16 @@ class EmployeeController extends Controller
      */
     public function update(UpdateEmployeeRequest $request, Employee $employee)
     {
-        //
+        $validated = $request->validated();
+
+        $employee->first_name = $validated['first_name'];
+        $employee->last_name = $validated['last_name'];
+        $employee->email = $validated['email'];
+        $employee->phone = $validated['phone'];
+
+        $employee->save();
+
+        return back();
     }
 
     /**
@@ -81,6 +107,8 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        //
+        $employee->delete();
+
+        return redirect()->route('employees.index');
     }
 }

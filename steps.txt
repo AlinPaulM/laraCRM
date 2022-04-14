@@ -58,10 +58,11 @@ FULL APPLICATION CREATION STEPS
 -define one-to-many and many-to-one relationships between the Employee and Company models, necessary for database seeding using EmployeeFactory and CompanyFactory, for queries, etc
 -add the seeding of companies and employees to database\seeders\DatabaseSeeder.php, using the newly created factories
 
+(in kind of random order)
 -created homepage(view file, added the route to it, added some custom css)
 -disabled registration(commented the GET and POST 'register' routes in routes\auth.php)
-
-
-
-
--to run the app navigate to the project folder and run "php artisan serve"
+-created navigation - created NavLinks blade component with "php artisan make:component NavLinks" (and wrote its class and view code, and used it where needed, obviously)
+-created validation rules in app/Http/Requests for company and employee forms
+-added the proper onDelete foreign key constraint on the employees migration file(so i can delete companies)
+-made an Errors component(to be used on the create and edit form pages)
+-finished writing the CompanyController and EmployeeController and their views
