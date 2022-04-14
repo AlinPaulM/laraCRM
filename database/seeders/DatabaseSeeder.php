@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         // seed database with some companies and employees, to have some data to play with (inspiration: https://laravel.com/docs/9.x/database-testing#has-many-relationships)
         Company::factory()
                 ->count(15)
-                ->has(Employee::factory()->count(rand(5, 25)))
+                ->has(Employee::factory()->count(15))
                 ->create();
     }
 }

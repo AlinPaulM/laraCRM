@@ -7,10 +7,15 @@
 
     <div class="container">
         <p>Email: {{ $employee->email }}</p>
-        <p>Website: {{ $employee->website }}</p>
         <p>Phone: {{ $employee->phone }}</p>
         <p>
-            <a href="{{ route('companies.show', ['company' => $employee->company->id]) }}">Company</a>
+            @if($employee->company !== null)
+            <a href="{{ route('companies.show', ['company' => $employee->company->id]) }}">
+                Company: {{$employee->company->name}}
+            </a>
+            @else
+            <p>Company: <i>(deleted)</i></p>
+            @endif
         </p>
 
         <br>

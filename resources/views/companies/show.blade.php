@@ -13,7 +13,19 @@
         <p>Email: {{ $company->email }}</p>
         <p>Website: {{ $company->website }}</p>
         <p>
-            <a href="{{ '...' }}">Employees</a>
+            <span>Employees:</span>
+            @if(!count($company->employees))
+                <i>(none)</i>
+            @else
+                @foreach($company->employees as $employee)
+                    <a href="{{ route('employees.show', ['employee' => $employee->id]) }}">
+                        {{$employee->first_name.' '.$employee->last_name}}
+                    </a>
+                    @if(!$loop->last)
+                    ,
+                    @endif
+                @endforeach
+            @endif
         </p>
 
         <br>
