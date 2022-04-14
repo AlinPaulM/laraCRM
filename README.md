@@ -4,10 +4,11 @@ LaraCRM
 SETUP INSTRUCTIONS(for local env):  
 -use phpmyadmin/etc to create a database with the configuration found in .env.example(i.e. see the DB_* rows)  (e.g. on a standard WAMP, all configuration is as in .env.example, so just create a "laracrm" database in phpmyadmin)  
 -open your terminal(git bash/etc), navigate to the project folder and run:  
-php artisan migrate --seed  
 composer install  
 cp .env.example .env  
+php artisan key:generate  
 php artisan cache:clear  
+php artisan migrate --seed  
 composer dump-autoload  
 php artisan serve  
 -start your MySQL(e.g. start WAMP)  
