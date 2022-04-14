@@ -8,7 +8,7 @@ composer install
 cp .env.example .env  
 php artisan key:generate  
 php artisan cache:clear  
-php artisan migrate --seed  
+php artisan migrate:fresh --seed  
 composer dump-autoload  
 php artisan serve  
 -start your MySQL(e.g. start WAMP)  
