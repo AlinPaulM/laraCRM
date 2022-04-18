@@ -7,7 +7,7 @@
 
     <div class="container">
         @if($company->logo)
-            <img src="{{ $company->logo }}" width="100" height="100">
+            <img src="{{ Storage::url($company->logo) }}" width="100" height="100">
         @endif
 
         <p>Email: {{ $company->email }}</p>

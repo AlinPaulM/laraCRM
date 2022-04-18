@@ -29,7 +29,7 @@
 
             @if($company->logo)
             <div class="mt-4">
-                <img src="{{ $company->logo }}" width="100" height="100">
+                <img src="{{ Storage::url($company->logo) }}" width="100" height="100">
             </div>
             @endif
 

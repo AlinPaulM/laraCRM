@@ -66,3 +66,11 @@ FULL APPLICATION CREATION STEPS
 -added the proper onDelete foreign key constraint on the employees migration file(so i can delete companies)
 -made an Errors component(to be used on the create and edit form pages)
 -finished writing the CompanyController and EmployeeController and their views
+
+-created the code to upload company logo
+    -set in .env
+        -FILESYSTEM_DISK=public (since all files uploaded by this project will be publicly accessible https://laravel.com/docs/9.x/filesystem#the-public-disk)
+        -APP_URL=http://127.0.0.1:8000 (since i use "php artisan serve" and that's where it's going - i needed it cuz commands like Storage::url($company->logo) were using to the old APP_URL which was http://localhost and images weren't loading)
+    -ran "php artisan storage:link" (p.s. i edited the installation steps in the Readme file to include this instead of commiting the symlink, it's better like this)
+    -updated the code for the store() and update() functions of CompanyController and EmployeeController to handle the file upload
+    -corrected the views cuz the urls to the files were wrong
