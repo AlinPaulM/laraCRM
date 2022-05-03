@@ -9,6 +9,8 @@ class Company extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     // define the one-to-many relationship
     public function employees()
     {
